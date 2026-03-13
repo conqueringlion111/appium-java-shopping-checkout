@@ -13,7 +13,6 @@ public class BaseTest {
     @BeforeMethod(alwaysRun = true)
     public void startDriver() throws Exception {
         driver = DriverFactory.createAndroidDriver();
-        // Explicit waits only; keep implicit wait at 0
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
     }
 

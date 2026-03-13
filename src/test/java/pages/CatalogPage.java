@@ -28,12 +28,24 @@ public class CatalogPage extends BasePage {
         return intFromText(cartBadgeCount, 0);
     }
 
+    public ProductDetailsPage openSelectProduct() {
+        waitForLoaded();
+
+        return new ProductDetailsPage(driver);
+    }
+
     public ProductDetailsPage openFirstProduct() {
         waitForLoaded();
         List<WebElement> tiles = driver.findElements(productTileImage);
         if (tiles.isEmpty()) throw new RuntimeException("No products found on catalog.");
         tiles.get(0).click();
         return new ProductDetailsPage(driver);
+    }
+
+    public CatalogPage scrollToElement(String text) {
+        waitForLoaded();
+        scrollToText(text);
+        return this;
     }
 
     public CartPage openCart() {
@@ -48,7 +60,6 @@ public class CatalogPage extends BasePage {
     private void relaunchToMain() {
         driver.activateApp("com.saucelabs.mydemoapp.android");
         // If app is in a weird state, restart activity by terminating & activating.
-        // (activateApp alone often works, but this is more deterministic.)
         driver.terminateApp("com.saucelabs.mydemoapp.android");
         driver.activateApp("com.saucelabs.mydemoapp.android");
     }
