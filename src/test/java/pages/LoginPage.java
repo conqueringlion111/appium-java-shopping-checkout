@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 public class LoginPage extends BasePage {
 
     private final By username1 = By.id("com.saucelabs.mydemoapp.android:id/username1TV");
-
+    private final By checkOutPageText = By.id("com.saucelabs.mydemoapp.android:id/checkoutTitleTV");
     private final By loginBtnIdGuess = By.id("com.saucelabs.mydemoapp.android:id/loginBtn");
     private final By loginBtnText = AppiumBy.androidUIAutomator("new UiSelector().textContains(\"Login\")");
 
@@ -28,6 +28,7 @@ public class LoginPage extends BasePage {
         // Try id first, else click by visible text
         if (isPresent(loginBtnIdGuess)) click(loginBtnIdGuess);
         else click(loginBtnText);
+        visible(checkOutPageText);
     }
 
 }

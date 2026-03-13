@@ -15,7 +15,7 @@ public class AddToCartTest extends CartCleanupTest {
         String productName = "Sauce Labs Backpack";
 
         new AppNavigator(driver).resetToCatalogCleanState();
-        CatalogPage catalog = new CatalogPage(driver).waitForLoaded();
+        new CatalogPage(driver).waitForLoaded();
         CartPage cart = new CatalogPage(driver)
                 .waitForLoaded()
                 .openFirstProduct()

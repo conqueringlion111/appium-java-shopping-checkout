@@ -102,6 +102,10 @@ public abstract class BasePage {
         return AppiumBy.androidUIAutomator(uiScroll);
     }
 
+    protected void scrollToText(String exactText) {
+        uiScrollIntoViewByText(exactText);
+    }
+
     /**
      * Scroll and tap element with exact text.
      */

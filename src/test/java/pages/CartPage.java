@@ -18,7 +18,6 @@ public class CartPage extends BasePage {
 
     /**
      * Simple and stable assertion: check the cart page contains the product name text.
-     * (Works well for demo apps and avoids guessing internal item ids.)
      */
     public boolean hasProductNamed(String productName) {
         return driver.findElements(

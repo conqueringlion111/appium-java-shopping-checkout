@@ -8,6 +8,7 @@ public class CheckoutPage extends BasePage {
 
     private final By toPaymentBtnId = By.id("com.saucelabs.mydemoapp.android:id/paymentBtn");
     private final By toPaymentBtnA11y = AppiumBy.accessibilityId("Saves user info for checkout");
+    private final By checkOutPageTitle = By.id("com.saucelabs.mydemoapp.android:id/checkoutTitleTV");
 
     // Generic “required” error finder (works well for validation UIs)
     private final By requiredErrorAny = AppiumBy.androidUIAutomator("new UiSelector().textContains(\"Please provide your\")");
